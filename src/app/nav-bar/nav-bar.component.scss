@@ -1,20 +1,65 @@
-.nav {
-  display: flex;
-  justify-content: space-around;
+.navbar {
+  background-color: white;
 }
-
 .nav-item {
   padding: 1em;
+  display: flex;
+  align-items: center;
 }
 
 .nav-item a {
   display: flex;
   align-items: center;
   padding: 1em;
+  font-size: 1.2em;
   text-decoration: none;
   color: #333;
 }
-
-.nav-item a i {
+.nav-item span,
+i {
+  font-size: 2.2em;
+}
+.nav-item1,
+.nav-item3 {
+  justify-content: end;
+}
+.nav-item2 {
+  justify-content: center;
+  color: white;
+  font-size: large;
+  font-weight: bolder;
+}
+.nav-item2 .btn-check:checked + .btn {
+  transition: 1.5s;
+  transition: ease-in-out;
+  background-color: #ff7f5c !important;
+}
+.nav-item2 .btn-groups {
+  background-color: #f9f5f3;
+  border-radius: 16px;
+}
+.orange {
+  font-size: 0.8em;
+  color: #ff7f5c;
+  align-self: end;
+}
+.nav-item3 i {
+  font-size: 1.2em;
+  color: #ff7f5c;
+  align-self: center;
   margin-right: 10px;
+}
+.nav-item a span {
+  margin-right: 10px;
+}
+
+form {
+  display: flex;
+  min-width: 100%;
+  justify-content: space-around;
+}
+form .col6 {
+  display: flex;
+  width: 35%;
+  flex-wrap: nowrap;
 }

@@ -1,1 +1,116 @@
-<p>dashboard works!</p>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css"
+/>
+<div class="row">
+  <div class="col-md-9">
+    <div class="center d-flex">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ total_value }} EGP</h5>
+          <p class="card-text">Total Value</p>
+          <i class="fa fa-caret-down">2%</i>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ total_sales }} m³</h5>
+          <p class="card-text">Total Sales</p>
+          <i class="fa fa-caret-down">2%</i>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ avg_sales }} m³</h5>
+          <p class="card-text">AVG Sales</p>
+          <i class="fa fa-caret-down">2%</i>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ total_transaction_count }}</h5>
+          <p class="card-text">Total transactions Count</p>
+          <i class="fa fa-caret-down">2%</i>
+        </div>
+      </div>
+    </div>
+    <div class="view">
+      <div class="btn-groups">
+        <input
+          type="radio"
+          class="btn-check"
+          name="view-style"
+          id="style2"
+          checked
+          (click)="view = 'graph'"
+        />
+        <label class="btn" for="style2">
+          <i class="fas fa-signal"></i>
+          GRAPH</label
+        >
+        <input
+          type="radio"
+          class="btn-check"
+          name="view-style"
+          id="style1"
+          (click)="view = 'list'"
+        />
+        <label class="btn" for="style1">
+          <i class="fas fa-list-ul"></i>
+          LIST
+        </label>
+      </div>
+    </div>
+    <div class="card-container">
+      @for (st of stations; track $index) {
+      <div class="card list" *ngIf="view == 'list'">
+        <div class="card-header">
+          <i class="fas fa-circle orange"></i>
+          <i class="fas fa-gas-pump"> </i>
+          {{ st.name }}
+          <button class="btn float-end">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <div class="card-body row">
+          <p class="card-text col-md-4">Total Sales: {{ st.total_sales }}</p>
+          <p class="card-text col-md-4">
+            compression state: {{ st.compression_state }}
+          </p>
+          <p class="card-text col-md-4">
+            max transaction hour: {{ st.max_transaction_hour }}
+          </p>
+        </div>
+        <div class="card-body row">
+          <p class="card-text col-md-4">total value: {{ st.total_value }}</p>
+          <p class="card-text col-md-4">
+            total transaction count: {{ st.total_transaction_count }}
+          </p>
+          <p class="card-text col-md-4">
+            max transaction datetime: {{ st.max_transaction_datetime }}
+          </p>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+  <div class="right col-md-3">
+    <h5 class="card-title">Card title</h5>
+    <img src="https://picsum.photos/200" alt="" />
+    <h5 class="card-title">Card title</h5>
+    <h5 class="card-title">Card title</h5>
+    <h5 class="card-title">Card title</h5>
+    <h5 class="card-title">Card title</h5>
+    <h5 class="card-title">Card title</h5>
+    <h5 class="card-title">Card title</h5>
+    <h5 class="card-title">Card title</h5>
+    <h5 class="card-title">Card title</h5>
+    <h5 class="card-title">Card title</h5>
+    <h5 class="card-title">Card title</h5>
+    <h5 class="card-title">Card title</h5>
+    <h5 class="card-title">Card title</h5>
+    <h5 class="card-title">Card title</h5>
+    <h5 class="card-title">Card title</h5>
+    <h5 class="card-title">Card title</h5>
+  </div>
+</div>

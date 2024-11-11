@@ -1,11 +1,64 @@
-<nav class="nav justify-content-around">
-  <div class="nav-item">
+<nav class="navbar justify-content-around row">
+  <div class="nav-item nav-item1 col">
     <a href="">
-      <i class="fa-regular fa-gas-pump"></i>
-      <i class="fa-light fa-gas-pump"></i>
-      Item 1
+      <i class="fas fa-circle orange"></i>
+      <i class="fas fa-gas-pump"></i>
+      <span> </span>
+      <span> {{ monitored_stations_count }} / {{ stations.length }}</span>
+      <label>
+        Monitored <br />
+        Stations</label
+      >
+    </a>
+    <a href="">
+      <i class="fas fa-circle orange"></i>
+      <i class="fas fa-reply"></i>
+      <span> </span>
+      <span (click)="service.getStations()"> {{ update_time }}</span>
+      <label>
+        last <br />
+        Update</label
+      >
     </a>
   </div>
-  <div class="nav-item">Item 2</div>
-  <div class="nav-item">Item 3</div>
+  <div class="nav-item nav-item2 col">
+    <div class="btn-groups">
+      <input
+        type="radio"
+        class="btn-check"
+        name="options-base"
+        id="option5"
+        checked
+      />
+      <label class="btn" for="option5">TODAY</label>
+      <input type="radio" class="btn-check" name="options-base" id="option8" />
+      <label class="btn" for="option8">YESTERDAY</label>
+      <input type="radio" class="btn-check" name="options-base" id="option6" />
+      <label class="btn" for="option6">LAST WEEK</label>
+    </div>
+  </div>
+  <div class="nav-item nav-item3 col">
+    <form [formGroup]="dateForm" class="row" (ngChange)="change()">
+      <div class="col6">
+        <i class="fas fa-play"></i>
+        <input
+          class="col"
+          id="startDate"
+          class="form-control"
+          formControlName="start"
+          type="date"
+        />
+      </div>
+      <div class="col6">
+        <i class="fas fa-stop"></i>
+        <input
+          class="col"
+          id="endDate"
+          class="form-control"
+          formControlName="end"
+          type="date"
+        />
+      </div>
+    </form>
+  </div>
 </nav>
